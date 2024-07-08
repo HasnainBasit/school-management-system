@@ -12,7 +12,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Edit Student Class</h4>
+			  <h4 class="box-title">Add Student Year</h4>
 			  
 			</div>
 			<!-- /.box-header -->
@@ -20,15 +20,15 @@
 			  <div class="row">
 				<div class="col">
 
-	 <form method="post" action="{{ route('update.student.year',$editData->id) }}">
+	 <form method="post" action="{{ route('store.student.year') }}">
 	 	@csrf
 					  <div class="row">
 						<div class="col-12">
 
 		<div class="form-group">
-		<h5>Student Class Name  <span class="text-danger">*</span></h5>
+		<h5>Student Year Name <span class="text-danger">*</span></h5>
 		<div class="controls">
-	 <input type="text" name="name" id="name" class="form-control" value="{{ $editData->name }}">
+	 <input type="text" name="name"  class="form-control" >
     @error('name')
 	 <span class="text-danger">{{ $message }}</span>
 	@enderror
@@ -38,7 +38,7 @@
   
 							 
 						<div class="text-xs-right">
-	 <input type="submit" class="btn btn-rounded btn-info mb-5" value="Update">
+	 <input type="submit" class="btn btn-rounded btn-info mb-5" value="Submit">
 						</div>
 					</form>
 
