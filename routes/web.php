@@ -9,6 +9,9 @@ use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
+use App\Http\Controllers\Backend\Setup\FeeCategoryController;
+use App\Models\FeeCategory;
+use Laravel\Fortify\Features;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -105,7 +108,7 @@ Route::prefix('setups')->group(function () {
 
     Route::get('/student/shift/view', [StudentShiftController::class, 'ViewShift'])->name('student.shift.view');
 
-    Route::get('/student/Shift/add', [StudentShiftController::class, 'StudentShiftAdd'])->name('student.shift.add');
+    Route::get('/student/shift/add', [StudentShiftController::class, 'StudentShiftAdd'])->name('student.shift.add');
 
     Route::post('/student/shift/store', [StudentShiftController::class, 'StudentShiftStore'])->name('store.student.shift');
 
@@ -114,4 +117,18 @@ Route::prefix('setups')->group(function () {
     Route::post('/student/shift/update/{id}', [StudentShiftController::class, 'StudentShiftUpdate'])->name('update.student.shift');
 
     Route::get('/student/shift/delete/{id}', [StudentShiftController::class, 'StudentShiftDelete'])->name('student.shift.delete');
+
+    //Fee Category Routes
+
+    Route::get('/fee/category/view', [FeeCategoryController::class, 'ViewFeeCategory'])->name('fee.category.view');
+
+    Route::get('/fee/category/add', [FeeCategoryController::class, 'FeeCategoryAdd'])->name('fee.category.add');
+
+    Route::post('/fee/category/store', [FeeCategoryController::class, 'FeeCategoryStore'])->name('store.fee.category');
+
+    Route::get('/fee/category/edit/{id}', [FeeCategoryController::class, 'FeeCategoryEdit'])->name('fee.category.edit');
+
+    Route::post('/fee/category/update/{id}', [FeeCategoryController::class, 'FeeCategoryUpdate'])->name('update.fee.category');
+
+    Route::get('/fee/category/delete/{id}', [FeeCategoryController::class, 'FeeCategoryDelete'])->name('fee.category.delete');
 });
