@@ -47,7 +47,7 @@ class StudentYearController extends Controller
     {
         $data = StudentYear::find($id);
         $validatedData = $request->validate([
-            'name' => 'required|unique:student_classes,name,' . $data->id,
+            'name' => 'required|unique:student_years,name,' . $data->id,
         ]);
 
 
