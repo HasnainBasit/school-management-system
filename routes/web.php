@@ -216,4 +216,6 @@ Route::prefix('students')->group(function () {
     Route::get('/reg/view', [StudentRegController::class, 'StudentRegView'])->name('student.registration.view');
 
     Route::get('/reg/Add', [StudentRegController::class, 'StudentRegAdd'])->name('student.registration.add');
+
+    Route::post('/reg/store', [StudentRegController::class, 'StudentRegStore'])->name('store.student.registration');
 });

@@ -16,7 +16,7 @@ $route = Route::current()->getName();
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
 						  <img src="{{ asset('backend/images/logo-dark.png')}}" alt="">
-						  <h3><b>SIMS</b></h3>
+						  <h3><b>SMS</b></h3>
 					 </div>
 				</a>
 			</div>
@@ -35,7 +35,7 @@ $route = Route::current()->getName();
       @if(Auth::user()->role == 'Admin')
         <li class="treeview {{ ($prefix == '/users')?'active':'' }}">
           <a href="#">
-            <i data-feather="message-circle"></i>
+            <i data-feather="users"></i>
             <span>Manage User</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
@@ -49,7 +49,7 @@ $route = Route::current()->getName();
 		  @endif
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Manage Profile</span>
+            <i data-feather="user"></i> <span>Manage Profile</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -62,7 +62,7 @@ $route = Route::current()->getName();
 		 
         <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Setup Management</span>
+            <i data-feather="settings"></i> <span>Setup Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -83,7 +83,7 @@ $route = Route::current()->getName();
 
         <li class="treeview {{ ($prefix == '/students')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Student Management</span>
+            <i data-feather="user-check"></i> <span>Student Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
